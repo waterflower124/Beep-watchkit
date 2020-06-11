@@ -1,16 +1,1094 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14256" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="16096" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch40"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14243"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14219"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="16012"/>
     </dependencies>
     <scenes>
-        <!--Interface Controller-->
+        <!--HomeInterfaceController-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider="target"/>
+                <controller identifier="HomeInterfaceController" fullScreen="YES" id="AgC-eL-Hgc" customClass="HomeInterfaceController" customModule="Beep_WatchKit_Extension">
+                    <items>
+                        <group width="1" height="1" alignment="left" layout="vertical" radius="0.0" spacing="0.0" id="WAO-UW-JxD">
+                            <items>
+                                <group width="1" height="30" alignment="left" backgroundImage="background" radius="0.0" spacing="0.0" id="KrE-m2-a55">
+                                    <items>
+                                        <group width="40" height="1" alignment="left" id="gij-bh-auc">
+                                            <items>
+                                                <button width="0.5" height="0.69999999999999996" alignment="right" verticalAlignment="center" backgroundImage="faq" id="x8p-Xw-Wr0">
+                                                    <connections>
+                                                        <action selector="faqButtonAction" destination="AgC-eL-Hgc" id="0EC-vE-5co"/>
+                                                        <segue destination="gGq-gU-1hd" kind="push" id="WT5-aM-4Lo"/>
+                                                    </connections>
+                                                </button>
+                                            </items>
+                                        </group>
+                                        <group width="30" height="1" alignment="left" id="xjY-LR-m3v">
+                                            <items>
+                                                <button width="0.69999999999999996" height="0.69999999999999996" alignment="right" verticalAlignment="center" backgroundImage="home" id="Psi-U5-6PN">
+                                                    <connections>
+                                                        <action selector="homeButtonAction" destination="AgC-eL-Hgc" id="ywf-h7-xeC"/>
+                                                    </connections>
+                                                </button>
+                                            </items>
+                                        </group>
+                                    </items>
+                                </group>
+                                <group width="1" alignment="left" radius="0.0" spacing="10" id="S46-xl-8dT">
+                                    <items>
+                                        <label alignment="center" text="The Original" id="1Ha-4Z-PYL">
+                                            <color key="textColor" red="0.14117647059999999" green="0.35686274509999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="font" type="system" pointSize="12"/>
+                                        </label>
+                                    </items>
+                                </group>
+                                <group width="1" alignment="left" radius="0.0" spacing="0.0" id="do8-Zf-DqD">
+                                    <items>
+                                        <label alignment="center" text="BEEPER APP" textAlignment="center" id="KsU-ag-yIr">
+                                            <color key="textColor" red="0.14117647059999999" green="0.35686274509999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="font" type="system" pointSize="18"/>
+                                        </label>
+                                    </items>
+                                </group>
+                                <group width="1" height="128" alignment="left" layout="vertical" spacing="0.0" id="Efx-QL-eGt">
+                                    <items>
+                                        <group width="1" height="0.5" alignment="left" spacing="0.0" id="ljO-ru-f20">
+                                            <items>
+                                                <button width="60" height="60" alignment="center" verticalAlignment="center" title="Begin" backgroundImage="color_circle_view" id="UfH-TG-Gzn">
+                                                    <fontDescription key="font" type="system" pointSize="11"/>
+                                                    <variation key="device=watch38mm" height="50" width="50"/>
+                                                    <variation key="device=watch40mm" height="60" width="60"/>
+                                                    <variation key="device=watch42mm" height="60" width="60"/>
+                                                    <variation key="device=watch44mm" height="60" width="60"/>
+                                                    <connections>
+                                                        <segue destination="Bgt-2q-o4p" kind="push" id="hXv-xd-v7A"/>
+                                                    </connections>
+                                                </button>
+                                            </items>
+                                        </group>
+                                        <group width="1" height="0.5" alignment="left" spacing="0.0" id="MvC-5K-Ocl">
+                                            <items>
+                                                <button width="60" height="60" alignment="center" verticalAlignment="center" title="Tour/FAQ" backgroundImage="color_circle_view" id="OPq-LE-yxg">
+                                                    <fontDescription key="font" type="system" pointSize="11"/>
+                                                    <variation key="device=watch38mm" height="50" width="50"/>
+                                                    <variation key="device=watch40mm" height="60" width="60"/>
+                                                    <variation key="device=watch42mm" height="60" width="60"/>
+                                                    <variation key="device=watch44mm" height="60" width="60"/>
+                                                    <connections>
+                                                        <segue destination="dEx-L0-bOM" kind="push" id="MLe-a2-v8F"/>
+                                                    </connections>
+                                                </button>
+                                            </items>
+                                        </group>
+                                    </items>
+                                    <variation key="device=watch38mm" height="105"/>
+                                    <variation key="device=watch40mm" height="131"/>
+                                    <variation key="device=watch44mm" height="158"/>
+                                </group>
+                            </items>
+                        </group>
+                    </items>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
+                </controller>
             </objects>
-            <point key="canvasLocation" x="220" y="345"/>
+            <point key="canvasLocation" x="191" y="57"/>
+        </scene>
+        <!--FAQInterfaceController-->
+        <scene sceneID="ypy-q3-jGb">
+            <objects>
+                <controller identifier="FAQInterfaceController" fullScreen="YES" id="dEx-L0-bOM" customClass="FAQInterfaceController" customModule="Beep_WatchKit_Extension">
+                    <items>
+                        <group width="1" alignment="left" layout="vertical" radius="0.0" spacing="0.0" id="fYN-Rb-jKd">
+                            <items>
+                                <group width="1" height="30" alignment="left" backgroundImage="background" radius="0.0" spacing="0.0" id="9Ni-r2-UO4">
+                                    <items>
+                                        <group width="40" height="1" alignment="left" id="Dwq-CX-MlJ">
+                                            <items>
+                                                <button width="0.5" height="0.69999999999999996" alignment="right" verticalAlignment="center" backgroundImage="faq" id="HqK-Qs-vKN">
+                                                    <connections>
+                                                        <segue destination="gGq-gU-1hd" kind="push" id="gkV-CT-tZl"/>
+                                                    </connections>
+                                                </button>
+                                            </items>
+                                        </group>
+                                        <group width="30" height="1" alignment="left" id="UvM-PW-hUe">
+                                            <items>
+                                                <button width="0.69999999999999996" height="0.69999999999999996" alignment="right" verticalAlignment="center" backgroundImage="home" id="Seq-51-dQC">
+                                                    <connections>
+                                                        <segue destination="AgC-eL-Hgc" kind="push" id="eHV-ac-K6D"/>
+                                                    </connections>
+                                                </button>
+                                            </items>
+                                        </group>
+                                    </items>
+                                </group>
+                                <group width="1" alignment="left" radius="0.0" spacing="10" id="nj7-Aa-vni">
+                                    <items>
+                                        <label height="20" alignment="center" verticalAlignment="center" text="Tour/FAQ" id="2W2-CJ-RGB">
+                                            <color key="textColor" red="0.14117647059999999" green="0.35686274509999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="font" type="system" pointSize="14"/>
+                                        </label>
+                                    </items>
+                                </group>
+                                <group width="1" alignment="left" id="oeg-Vt-w6k">
+                                    <items>
+                                        <group width="0.90000000000000002" alignment="center" layout="vertical" id="TLg-Lg-jOS">
+                                            <items>
+                                                <label alignment="left" text="What does the app do?" numberOfLines="0" id="LWZ-sx-orh">
+                                                    <color key="textColor" red="0.14117647059999999" green="0.35686274509999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="font" type="boldSystem" pointSize="12"/>
+                                                </label>
+                                                <label alignment="left" textAlignment="left" numberOfLines="0" id="80n-SS-fLt">
+                                                    <mutableString key="text">By using random, audible prompts (beeps) to remind the user to stay on task, this app helps people who struggle with attention and focus. Use it while reading, doing homework, completing chores and more. This tool can help you stay focused on anything that you may struggle with. 
+
+Research done nearly 50 years ago using a “beeper tape recording” showed that test subjects using beeps
+to remind them to stay focused had better results than others who:
+- Depended on another person to prompt them to stay on-task
+- Relied upon token systems as incentive
+- Used medication exclusively</mutableString>
+                                                    <color key="textColor" red="0.14117647059999999" green="0.35686274509999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="font" type="system" pointSize="11"/>
+                                                </label>
+                                                <label width="1" alignment="left" text="What problem do you solve?" textAlignment="left" numberOfLines="0" id="yyN-WO-uKV">
+                                                    <color key="textColor" red="0.14117647059999999" green="0.35686274509999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="font" type="boldSystem" pointSize="12"/>
+                                                </label>
+                                                <label alignment="left" textAlignment="left" numberOfLines="0" id="Ag1-XK-gyq">
+                                                    <mutableString key="text">Millions struggle with attention and focus when they need to have consistent, on-task behavior. This app takes nagging out of the equation. It helps the user become more efficient through self-regulation and builds confidence as his or her results improve. 
+
+The research that demonstrated how a beeper tape can help attention and focus was ahead of its time. Now technology has caught up to the research results and through this app, anyone can use this remarkable and proven technique to maintain sustained focus.</mutableString>
+                                                    <color key="textColor" red="0.14117647059999999" green="0.35686274509999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="font" type="system" pointSize="11"/>
+                                                </label>
+                                                <label width="1" alignment="left" text="What is unique about your app?" textAlignment="left" numberOfLines="0" id="jvS-9O-8uE">
+                                                    <color key="textColor" red="0.14117647059999999" green="0.35686274509999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="font" type="boldSystem" pointSize="12"/>
+                                                </label>
+                                                <label alignment="left" textAlignment="left" numberOfLines="0" id="NvC-Nn-7wT">
+                                                    <string key="text">There is nothing like it in any app store. It is the only tool available that captures the research-based beeper tape method of improving focus. Using Fixed and Random Prompts, it makes it much harder to split your attention when working on a task that may be boring, uninteresting or pressed for time.</string>
+                                                    <color key="textColor" red="0.14117647059999999" green="0.35686274509999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="font" type="system" pointSize="11"/>
+                                                </label>
+                                                <label width="1" alignment="left" text="Why should someone download your app rather than something else?" textAlignment="left" numberOfLines="0" id="1fC-4c-hC7">
+                                                    <color key="textColor" red="0.14117647059999999" green="0.35686274509999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="font" type="boldSystem" pointSize="12"/>
+                                                </label>
+                                                <label alignment="left" textAlignment="left" numberOfLines="0" id="6Fu-cP-IIR">
+                                                    <string key="text">This app is simple to use and has proven results. A free two-week trial allows the user to test it out themselves to see how much their attention improves.</string>
+                                                    <color key="textColor" red="0.14117647059999999" green="0.35686274509999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="font" type="system" pointSize="11"/>
+                                                </label>
+                                                <label width="1" alignment="left" text="What’s the best way to set up the device I use the app with?" textAlignment="left" numberOfLines="0" id="YIl-Vm-ujW">
+                                                    <color key="textColor" red="0.14117647059999999" green="0.35686274509999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="font" type="boldSystem" pointSize="12"/>
+                                                </label>
+                                                <label alignment="left" textAlignment="left" numberOfLines="0" id="tHm-rt-i8z">
+                                                    <string key="text">Set device to “allow notifications”. Change your settings to have your device “never sleep”. Open app and use. If using our app with other applications open on same device, the notification alert will appear, and you will have to switch back and forth. It is more efficient to use one device for the Original Beeper App™ and work on another. The fixed/random prompt alert may interfere with your workflow switching back and forth on the same device.</string>
+                                                    <color key="textColor" red="0.14117647059999999" green="0.35686274509999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="font" type="system" pointSize="11"/>
+                                                </label>
+                                                <label width="1" alignment="left" text="Why would I use Fixed Prompts?" textAlignment="left" numberOfLines="0" id="QYV-hu-0Vb">
+                                                    <color key="textColor" red="0.14117647059999999" green="0.35686274509999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="font" type="boldSystem" pointSize="12"/>
+                                                </label>
+                                                <label alignment="left" textAlignment="left" numberOfLines="0" id="mpK-vR-g7Y">
+                                                    <string key="text">Fixed prompts can be set at any time the user chooses. The user can set the timer to beep  every 10, 20 or 30 seconds or however long they feel they need in between prompts to maintain attention and focus. With the prompts fixed, the user has more control over their attention splitting too soon and too often into their task. This setting is a great place to start as it can keep the prompts close together to remind you to stay on task.</string>
+                                                    <color key="textColor" red="0.14117647059999999" green="0.35686274509999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="font" type="system" pointSize="11"/>
+                                                </label>
+                                                <label width="1" alignment="left" text="Why would I use Random Prompts?" textAlignment="left" numberOfLines="0" id="bU4-r3-5wu">
+                                                    <color key="textColor" red="0.14117647059999999" green="0.35686274509999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="font" type="boldSystem" pointSize="12"/>
+                                                </label>
+                                                <label alignment="left" textAlignment="left" numberOfLines="0" id="sLa-bg-SZd">
+                                                    <string key="text">Random prompts increase persistence in staying on-task over a long period of time which in turn increases self regulation. You are more in control of your attention and focus over a variety of tasks. With improved self regulation, it makes it harder to split your attention.</string>
+                                                    <color key="textColor" red="0.14117647059999999" green="0.35686274509999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="font" type="system" pointSize="11"/>
+                                                </label>
+                                                <label width="1" alignment="left" text="What are the differences between the Random Prompt Frequencies?" textAlignment="left" numberOfLines="0" id="3Fm-4d-eNY">
+                                                    <color key="textColor" red="0.14117647059999999" green="0.35686274509999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="font" type="boldSystem" pointSize="12"/>
+                                                </label>
+                                                <label alignment="left" textAlignment="left" numberOfLines="0" id="47M-sb-6CA">
+                                                    <string key="text">Prompt frequency means the number of prompts or times the button lights up and the beeps sound off. When set to High Frequency, the button will beep often enough to redirect someone who gets distracted easily and repeatedly. Medium Frequency is for those who need less prompts to stay focused. Many may find that this frequency setting is best to start with in order to gauge how much or how little their focus needs to be redirected. Low Frequency is for those who need limited prompts every few minutes.</string>
+                                                    <color key="textColor" red="0.14117647059999999" green="0.35686274509999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="font" type="system" pointSize="11"/>
+                                                </label>
+                                                <label width="1" alignment="left" text="How do I print my results?" textAlignment="left" numberOfLines="0" id="GoI-Oo-wMa">
+                                                    <color key="textColor" red="0.14117647059999999" green="0.35686274509999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="font" type="boldSystem" pointSize="12"/>
+                                                </label>
+                                                <label alignment="left" textAlignment="left" numberOfLines="0" id="bOM-9B-WXE">
+                                                    <string key="text">On the results page, you will see a “printer’ icon on the top right of the page. Press that button so the app can access your photo library. Once accepted, it saves a screenshot to your photo library and you can print your results page from there.</string>
+                                                    <color key="textColor" red="0.14117647059999999" green="0.35686274509999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="font" type="system" pointSize="11"/>
+                                                </label>
+                                                <label width="1" alignment="left" text="What users have experienced using Original Beeper App" textAlignment="left" numberOfLines="0" id="3xp-vP-30i">
+                                                    <color key="textColor" red="0.14117647059999999" green="0.35686274509999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="font" type="boldSystem" pointSize="12"/>
+                                                </label>
+                                                <label alignment="left" textAlignment="left" numberOfLines="0" id="hLz-cD-rxZ">
+                                                    <mutableString key="text">The beeps feel like guardrails keeping focus steadily flowing between the lines. If having a day where they are more distracted, increasing the frequency of the beeps tightens the guardrails. The randomness of the beeps (at any frequency) is helpful because it prevents the mind from finding a pattern and coasting. It’s like driving on a curvy road instead of a straight one. The beeps help users automatically check in and adjust their focus. If their thoughts are drifting out of the lane, the beep brings them right back where they need to be to stay on-task.</mutableString>
+                                                    <color key="textColor" red="0.14117647059999999" green="0.35686274509999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="font" type="system" pointSize="11"/>
+                                                </label>
+                                                <label width="1" alignment="left" text="What are some applications for Educators?" textAlignment="left" numberOfLines="0" id="tUM-Yk-9bh">
+                                                    <color key="textColor" red="0.14117647059999999" green="0.35686274509999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="font" type="boldSystem" pointSize="12"/>
+                                                </label>
+                                                <label alignment="left" textAlignment="left" numberOfLines="0" id="Mjw-6S-qZe">
+                                                    <string key="text">During independent study/work, students use app with headphones to guide and enhance          on-task behavior. Teachers have used the app to broadcast through classroom speakers effecting all students in class at one time. Teachers use the app during their prep period to increase productivity. Special Ed. Teachers/ School Psychologists have used the app with fixed prompts on silent (vibration or visual only) for behavior observations.</string>
+                                                    <color key="textColor" red="0.14117647059999999" green="0.35686274509999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="font" type="system" pointSize="11"/>
+                                                </label>
+                                            </items>
+                                        </group>
+                                    </items>
+                                </group>
+                                <group width="1" height="20" alignment="left" id="HLL-AG-JqJ"/>
+                                <group width="1" height="30" alignment="left" backgroundImage="background" radius="0.0" id="TCV-t5-cct">
+                                    <items>
+                                        <button width="1" height="1" alignment="left" title="Back to home" id="8kz-c7-xNb">
+                                            <connections>
+                                                <action selector="startButtonAction" destination="Bgt-2q-o4p" id="yaL-Es-1Sn"/>
+                                                <segue destination="AgC-eL-Hgc" kind="push" id="jWa-Fc-n5o"/>
+                                            </connections>
+                                        </button>
+                                    </items>
+                                </group>
+                            </items>
+                        </group>
+                    </items>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-12.592592592592593" y="644.18781725888323"/>
+        </scene>
+        <!--ModalInterfaceController-->
+        <scene sceneID="MEb-kN-b1d">
+            <objects>
+                <controller identifier="ModalInterfaceController" id="XsK-7p-nuk" customClass="ModalInterfaceController" customModule="Beep_WatchKit_Extension">
+                    <items>
+                        <group width="1" height="1" alignment="left" layout="vertical" radius="0.0" id="pdN-Aq-tKB">
+                            <items>
+                                <picker width="1" height="100" alignment="left" verticalAlignment="center" focusStyle="sequence" id="awy-V5-Q9i">
+                                    <connections>
+                                        <action selector="pickerChangedAction:" destination="XsK-7p-nuk" id="oH6-B4-2Ba"/>
+                                    </connections>
+                                </picker>
+                                <group width="1" alignment="left" verticalAlignment="center" layout="vertical" id="iUo-Rc-qu5">
+                                    <items>
+                                        <button width="1" height="30" alignment="left" title="Done" id="vqS-JL-tRS">
+                                            <color key="backgroundColor" red="0.14117647059999999" green="0.35686274509999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="doneButtonAction" destination="XsK-7p-nuk" id="Cyp-qo-JwT"/>
+                                            </connections>
+                                        </button>
+                                    </items>
+                                </group>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="pickerView" destination="awy-V5-Q9i" id="6Vg-XD-TpA"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="466" y="-367"/>
+        </scene>
+        <!--Setting Interface Controller-->
+        <scene sceneID="p5C-mT-Nu8">
+            <objects>
+                <controller fullScreen="YES" id="Bgt-2q-o4p" customClass="SettingInterfaceController" customModule="Beep_WatchKit_Extension">
+                    <items>
+                        <group width="1" alignment="left" layout="overlap" radius="0.0" id="D9m-34-J20">
+                            <items>
+                                <group width="1" height="500" alignment="left" layout="vertical" radius="0.0" spacing="0.0" id="hUa-xP-Xcq">
+                                    <items>
+                                        <group width="1" height="30" alignment="left" backgroundImage="background" radius="0.0" spacing="0.0" id="h87-Ya-IhR">
+                                            <items>
+                                                <group width="40" height="1" alignment="left" id="5Aj-f0-1tF">
+                                                    <items>
+                                                        <button width="0.5" height="0.69999999999999996" alignment="right" verticalAlignment="center" backgroundImage="faq" id="iuk-SK-A3X">
+                                                            <connections>
+                                                                <segue destination="gGq-gU-1hd" kind="push" id="MIP-5B-0mT"/>
+                                                            </connections>
+                                                        </button>
+                                                    </items>
+                                                </group>
+                                                <group width="30" height="1" alignment="left" id="Mxm-kn-Bjd">
+                                                    <items>
+                                                        <button width="0.69999999999999996" height="0.69999999999999996" alignment="right" verticalAlignment="center" backgroundImage="home" id="M5D-X1-5Mh">
+                                                            <connections>
+                                                                <segue destination="AgC-eL-Hgc" kind="push" id="IJ5-iE-qVm"/>
+                                                            </connections>
+                                                        </button>
+                                                    </items>
+                                                </group>
+                                            </items>
+                                        </group>
+                                        <group width="1" alignment="left" layout="vertical" radius="0.0" spacing="0.0" id="qof-XC-U9N">
+                                            <items>
+                                                <label height="20" alignment="center" text="How long would you" id="6qU-Ny-HAE">
+                                                    <color key="textColor" red="0.14117647059999999" green="0.35686274509999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="font" type="system" pointSize="14"/>
+                                                </label>
+                                                <label height="20" alignment="center" text="like to work?" id="GC9-FH-KMd">
+                                                    <color key="textColor" red="0.14117647059999999" green="0.35686274509999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="font" type="system" pointSize="14"/>
+                                                </label>
+                                            </items>
+                                        </group>
+                                        <group width="1" height="60" alignment="left" id="lX7-KM-nHc">
+                                            <items>
+                                                <group width="0.33000000000000002" height="1" alignment="left" layout="vertical" id="DiD-Mq-9lt">
+                                                    <items>
+                                                        <group width="1" height="40" alignment="center" verticalAlignment="center" layout="overlap" id="Y0R-9U-Jyb">
+                                                            <items>
+                                                                <imageView width="35" height="35" alignment="center" verticalAlignment="center" image="time_set_circle" id="aM0-fz-zno"/>
+                                                                <label alignment="center" verticalAlignment="center" text="0" id="ENW-6T-zHv">
+                                                                    <color key="textColor" red="0.14117647059999999" green="0.35686274509999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <fontDescription key="font" type="system" pointSize="20"/>
+                                                                </label>
+                                                                <button width="1" height="1" alignment="left" id="4Sw-8s-ioO">
+                                                                    <connections>
+                                                                        <action selector="beephourButtonAction" destination="Bgt-2q-o4p" id="9K1-uv-t8Z"/>
+                                                                    </connections>
+                                                                </button>
+                                                            </items>
+                                                        </group>
+                                                        <label alignment="center" verticalAlignment="center" text="hours" id="eWN-j3-smp">
+                                                            <color key="textColor" red="0.14117647059999999" green="0.35686274509999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <fontDescription key="font" type="system" pointSize="12"/>
+                                                        </label>
+                                                    </items>
+                                                </group>
+                                                <group width="0.33000000000000002" height="1" alignment="left" layout="vertical" id="fn8-QU-KYv">
+                                                    <items>
+                                                        <group width="1" height="40" alignment="center" verticalAlignment="center" layout="overlap" id="4Nn-Cw-H1J">
+                                                            <items>
+                                                                <imageView width="35" height="35" alignment="center" verticalAlignment="center" image="time_set_circle" id="uZd-Us-y8d"/>
+                                                                <label alignment="center" verticalAlignment="center" text="0" id="mh5-9R-eva">
+                                                                    <color key="textColor" red="0.14117647059999999" green="0.35686274509999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <fontDescription key="font" type="system" pointSize="20"/>
+                                                                </label>
+                                                                <button width="1" height="1" alignment="left" id="xLf-6n-DHV">
+                                                                    <connections>
+                                                                        <action selector="beepminutesButtonAction" destination="Bgt-2q-o4p" id="90W-eF-hWT"/>
+                                                                    </connections>
+                                                                </button>
+                                                            </items>
+                                                        </group>
+                                                        <label alignment="center" verticalAlignment="center" text="minutes" id="EUc-5J-6Uh">
+                                                            <color key="textColor" red="0.14117647059999999" green="0.35686274509999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <fontDescription key="font" type="system" pointSize="12"/>
+                                                        </label>
+                                                    </items>
+                                                </group>
+                                                <group width="0.33000000000000002" height="1" alignment="left" layout="vertical" id="kgU-r7-v3e">
+                                                    <items>
+                                                        <group width="1" height="40" alignment="center" verticalAlignment="center" layout="overlap" id="dvG-oJ-shx">
+                                                            <items>
+                                                                <imageView width="35" height="35" alignment="center" verticalAlignment="center" image="time_set_circle" id="cCW-1Z-Dhk"/>
+                                                                <label alignment="center" verticalAlignment="center" text="0" id="5kJ-dI-tlk">
+                                                                    <color key="textColor" red="0.14117647059999999" green="0.35686274509999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <fontDescription key="font" type="system" pointSize="20"/>
+                                                                </label>
+                                                                <button width="1" height="1" alignment="left" id="aEK-0E-H9f">
+                                                                    <connections>
+                                                                        <action selector="beepsecondButtonAction" destination="Bgt-2q-o4p" id="qcY-7T-E99"/>
+                                                                    </connections>
+                                                                </button>
+                                                            </items>
+                                                        </group>
+                                                        <label alignment="center" verticalAlignment="center" text="seconds" id="PtK-GR-3cm">
+                                                            <color key="textColor" red="0.14117647059999999" green="0.35686274509999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <fontDescription key="font" type="system" pointSize="12"/>
+                                                        </label>
+                                                    </items>
+                                                </group>
+                                            </items>
+                                        </group>
+                                        <group width="1" height="60" alignment="left" layout="vertical" spacing="0.0" id="aEk-c9-tnZ">
+                                            <items>
+                                                <group width="1" height="0.5" alignment="left" layout="overlap" spacing="0.0" id="iEq-9q-3lY">
+                                                    <items>
+                                                        <group width="1" alignment="left" id="Ox4-KO-k8t">
+                                                            <items>
+                                                                <group width="30" height="1" alignment="left" id="ABE-id-FLa">
+                                                                    <items>
+                                                                        <imageView width="15" height="15" alignment="center" verticalAlignment="center" image="color_circle_button" id="VVe-5L-33p"/>
+                                                                    </items>
+                                                                </group>
+                                                                <group width="100" height="1" alignment="left" id="Rh1-Hd-ZpQ">
+                                                                    <items>
+                                                                        <label alignment="left" verticalAlignment="center" text="Random prompts" id="6Um-9Z-dmp">
+                                                                            <color key="textColor" red="0.14117647059999999" green="0.35686274509999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            <fontDescription key="font" type="system" pointSize="12"/>
+                                                                        </label>
+                                                                    </items>
+                                                                </group>
+                                                            </items>
+                                                        </group>
+                                                        <button width="1" height="1" alignment="left" id="YUr-fp-57d">
+                                                            <fontDescription key="font" type="system" pointSize="12"/>
+                                                            <connections>
+                                                                <action selector="randomButtonAction" destination="Bgt-2q-o4p" id="TxR-SR-TkX"/>
+                                                            </connections>
+                                                        </button>
+                                                    </items>
+                                                </group>
+                                                <group width="1" height="0.5" alignment="left" layout="overlap" spacing="0.0" id="jrs-9E-vZ3">
+                                                    <items>
+                                                        <group width="1" alignment="left" verticalAlignment="center" layout="overlap" spacing="0.0" id="iiR-HA-CIP">
+                                                            <items>
+                                                                <group width="1" alignment="left" id="GzA-fq-3j3">
+                                                                    <items>
+                                                                        <group width="30" height="1" alignment="left" id="RFp-Fk-TyO">
+                                                                            <items>
+                                                                                <imageView width="15" height="15" alignment="center" verticalAlignment="center" image="empty_circle_button" id="uF3-5d-gHk"/>
+                                                                            </items>
+                                                                        </group>
+                                                                        <group width="100" height="1" alignment="left" id="BAn-BI-LDB">
+                                                                            <items>
+                                                                                <label alignment="left" verticalAlignment="center" text="Fixed" id="K1N-k7-z2F">
+                                                                                    <color key="textColor" red="0.14117647059999999" green="0.35686274509999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                    <fontDescription key="font" type="system" pointSize="12"/>
+                                                                                </label>
+                                                                            </items>
+                                                                        </group>
+                                                                    </items>
+                                                                </group>
+                                                            </items>
+                                                        </group>
+                                                        <button width="1" height="1" alignment="left" id="fOn-bD-D8b">
+                                                            <connections>
+                                                                <action selector="fixedButtonAction" destination="Bgt-2q-o4p" id="j8l-ZY-9HS"/>
+                                                            </connections>
+                                                        </button>
+                                                    </items>
+                                                </group>
+                                            </items>
+                                        </group>
+                                        <group width="1" alignment="left" layout="overlap" id="tj9-UJ-2Jx">
+                                            <items>
+                                                <group width="1" height="60" alignment="left" layout="vertical" id="fyZ-rj-CSA">
+                                                    <items>
+                                                        <group width="1" height="0.5" alignment="left" id="CYo-q6-gjK">
+                                                            <items>
+                                                                <group width="5" alignment="left" id="Ya8-Zr-NHY"/>
+                                                                <label alignment="left" verticalAlignment="center" text="Prompt Frequency" id="TS9-JN-YuM">
+                                                                    <color key="textColor" red="0.14117647059999999" green="0.35686274509999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <fontDescription key="font" type="system" pointSize="12"/>
+                                                                </label>
+                                                            </items>
+                                                        </group>
+                                                        <group width="1" height="0.5" alignment="left" id="tV0-rO-47I">
+                                                            <items>
+                                                                <button width="0.69999999999999996" height="20" alignment="center" verticalAlignment="center" title="Medium" backgroundImage="background" id="Zcw-d7-tQo">
+                                                                    <fontDescription key="font" type="system" pointSize="12"/>
+                                                                    <connections>
+                                                                        <action selector="frequencyButtonAction" destination="Bgt-2q-o4p" id="0us-XE-us8"/>
+                                                                    </connections>
+                                                                </button>
+                                                            </items>
+                                                        </group>
+                                                    </items>
+                                                </group>
+                                                <group width="1" height="60" alignment="left" hidden="YES" layout="vertical" id="e35-lg-aCf">
+                                                    <items>
+                                                        <group width="1" alignment="left" id="D9V-ld-TdG">
+                                                            <items>
+                                                                <group width="7.5" height="2" alignment="left" id="FdD-Cf-WBh"/>
+                                                                <label alignment="left" text="Time:" id="3FT-W0-ges">
+                                                                    <color key="textColor" red="0.14117647059999999" green="0.35686274509999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <fontDescription key="font" type="system" pointSize="12"/>
+                                                                </label>
+                                                                <label alignment="left" text="10s" id="gkQ-zc-ukF">
+                                                                    <color key="textColor" red="0.14117647059999999" green="0.35686274509999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <fontDescription key="font" type="system" pointSize="12"/>
+                                                                </label>
+                                                            </items>
+                                                        </group>
+                                                        <slider width="1" alignment="left" verticalAlignment="center" continuous="YES" value="10" minimum="10" maximum="59" steps="49" minimumImage="minus" catalog="system" maximumImage="plus" id="oJ0-R8-gyy">
+                                                            <color key="color" red="0.14117647059999999" green="0.35686274509999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <connections>
+                                                                <action selector="fixedTimeSliderAction:" destination="Bgt-2q-o4p" id="yvj-aw-l1a"/>
+                                                            </connections>
+                                                        </slider>
+                                                    </items>
+                                                </group>
+                                            </items>
+                                        </group>
+                                        <group width="1" alignment="left" layout="overlap" id="3qV-Kx-kIk">
+                                            <items>
+                                                <group width="1" height="60" alignment="left" layout="vertical" id="k1y-eP-x8a">
+                                                    <items>
+                                                        <group width="1" alignment="left" id="4IN-AM-yiK">
+                                                            <items>
+                                                                <group width="7.5" height="2" alignment="left" id="kzL-On-iqD"/>
+                                                                <label alignment="left" text="Prompt Time:" id="hPb-eX-mYp">
+                                                                    <color key="textColor" red="0.14117647059999999" green="0.35686274509999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <fontDescription key="font" type="system" pointSize="12"/>
+                                                                </label>
+                                                            </items>
+                                                        </group>
+                                                        <group width="1" height="40" alignment="left" id="nSD-I1-avS">
+                                                            <items>
+                                                                <group width="0.33000000000000002" height="1" alignment="left" id="Qdf-hc-LBY">
+                                                                    <items>
+                                                                        <group width="1" height="0.5" alignment="left" verticalAlignment="center" layout="overlap" spacing="0.0" id="KJH-5A-y8q">
+                                                                            <items>
+                                                                                <group width="1" alignment="left" id="sfK-Lg-ptS">
+                                                                                    <items>
+                                                                                        <group width="30" height="1" alignment="left" id="TXj-2C-QIv">
+                                                                                            <items>
+                                                                                                <imageView width="15" height="15" alignment="center" verticalAlignment="center" image="color_circle_button" id="MhT-bk-OAp"/>
+                                                                                            </items>
+                                                                                        </group>
+                                                                                        <group width="100" height="1" alignment="left" id="sjD-3f-x2n">
+                                                                                            <items>
+                                                                                                <label alignment="left" verticalAlignment="center" text="4s" id="AAi-oO-ZM7">
+                                                                                                    <color key="textColor" red="0.14117647059999999" green="0.35686274509999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                                    <fontDescription key="font" type="system" pointSize="12"/>
+                                                                                                </label>
+                                                                                            </items>
+                                                                                        </group>
+                                                                                    </items>
+                                                                                </group>
+                                                                                <button width="1" height="1" alignment="left" id="Hod-SD-i5Y">
+                                                                                    <connections>
+                                                                                        <action selector="PromptTime4sButtonAction" destination="Bgt-2q-o4p" id="QUX-z2-tYo"/>
+                                                                                    </connections>
+                                                                                </button>
+                                                                            </items>
+                                                                        </group>
+                                                                    </items>
+                                                                </group>
+                                                                <group width="0.33000000000000002" height="1" alignment="left" id="mSM-P1-Mc9">
+                                                                    <items>
+                                                                        <group width="1" height="0.5" alignment="left" verticalAlignment="center" layout="overlap" spacing="0.0" id="vY4-Xw-dT1">
+                                                                            <items>
+                                                                                <group width="1" alignment="left" id="LGA-0t-R0v">
+                                                                                    <items>
+                                                                                        <group width="30" height="1" alignment="left" id="0cC-QX-Ztf">
+                                                                                            <items>
+                                                                                                <imageView width="15" height="15" alignment="center" verticalAlignment="center" image="color_circle_button" id="bgx-4F-uOC"/>
+                                                                                            </items>
+                                                                                        </group>
+                                                                                        <group width="100" height="1" alignment="left" id="Ai3-lG-OKB">
+                                                                                            <items>
+                                                                                                <label alignment="left" verticalAlignment="center" text="5s" id="Jnb-1P-ZJQ">
+                                                                                                    <color key="textColor" red="0.14117647059999999" green="0.35686274509999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                                    <fontDescription key="font" type="system" pointSize="12"/>
+                                                                                                </label>
+                                                                                            </items>
+                                                                                        </group>
+                                                                                    </items>
+                                                                                </group>
+                                                                                <button width="1" height="1" alignment="left" id="Sjl-p3-Vni">
+                                                                                    <connections>
+                                                                                        <action selector="PromptTime5sButtonAction" destination="Bgt-2q-o4p" id="iEV-40-cuJ"/>
+                                                                                    </connections>
+                                                                                </button>
+                                                                            </items>
+                                                                        </group>
+                                                                    </items>
+                                                                </group>
+                                                                <group width="0.33000000000000002" height="1" alignment="left" id="Vlu-CJ-JMM">
+                                                                    <items>
+                                                                        <group width="1" height="0.5" alignment="left" verticalAlignment="center" layout="overlap" spacing="0.0" id="26I-pf-bJO">
+                                                                            <items>
+                                                                                <group width="1" alignment="left" id="JLw-fT-oGH">
+                                                                                    <items>
+                                                                                        <group width="30" height="1" alignment="left" id="E8B-fJ-fjF">
+                                                                                            <items>
+                                                                                                <imageView width="15" height="15" alignment="center" verticalAlignment="center" image="color_circle_button" id="4HD-fW-oe0"/>
+                                                                                            </items>
+                                                                                        </group>
+                                                                                        <group width="100" height="1" alignment="left" id="Gs0-Rj-cGM">
+                                                                                            <items>
+                                                                                                <label alignment="left" verticalAlignment="center" text="6s" id="IZ1-IY-Zme">
+                                                                                                    <color key="textColor" red="0.14117647059999999" green="0.35686274509999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                                    <fontDescription key="font" type="system" pointSize="12"/>
+                                                                                                </label>
+                                                                                            </items>
+                                                                                        </group>
+                                                                                    </items>
+                                                                                </group>
+                                                                                <button width="1" height="1" alignment="left" id="WrE-UV-GX1">
+                                                                                    <connections>
+                                                                                        <action selector="PromptTime6sButtonAction" destination="Bgt-2q-o4p" id="Je7-Nv-AKJ"/>
+                                                                                    </connections>
+                                                                                </button>
+                                                                            </items>
+                                                                        </group>
+                                                                    </items>
+                                                                </group>
+                                                            </items>
+                                                        </group>
+                                                    </items>
+                                                </group>
+                                            </items>
+                                        </group>
+                                        <group width="1" height="60" alignment="left" layout="vertical" id="CDR-ZA-xFV">
+                                            <items>
+                                                <group width="1" height="0.5" alignment="left" id="g73-9w-uO6">
+                                                    <items>
+                                                        <group width="5" alignment="left" id="kvC-91-FOz"/>
+                                                        <label alignment="left" verticalAlignment="center" text="Beeper Sound" id="6YU-pQ-nRg">
+                                                            <color key="textColor" red="0.14117647059999999" green="0.35686274509999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <fontDescription key="font" type="system" pointSize="12"/>
+                                                        </label>
+                                                    </items>
+                                                </group>
+                                                <group width="1" height="0.5" alignment="left" id="3t6-AZ-mCr">
+                                                    <items>
+                                                        <button width="0.69999999999999996" height="20" alignment="center" verticalAlignment="center" title="Digital beep" backgroundImage="background" id="EsB-u3-RT9">
+                                                            <fontDescription key="font" type="system" pointSize="12"/>
+                                                            <connections>
+                                                                <action selector="beeperButtonAction" destination="Bgt-2q-o4p" id="7UF-8U-mEW"/>
+                                                            </connections>
+                                                        </button>
+                                                    </items>
+                                                </group>
+                                            </items>
+                                        </group>
+                                        <group width="1" height="60" alignment="left" layout="vertical" id="6PM-3s-LyO">
+                                            <items>
+                                                <group width="1" alignment="left" id="huT-vA-aP1">
+                                                    <items>
+                                                        <group width="7.5" height="2" alignment="left" id="I66-OP-b7H"/>
+                                                        <label alignment="left" text="Sound Level" id="g9H-cs-CB9">
+                                                            <color key="textColor" red="0.14117647059999999" green="0.35686274509999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <fontDescription key="font" type="system" pointSize="12"/>
+                                                        </label>
+                                                    </items>
+                                                </group>
+                                                <slider width="1" alignment="left" verticalAlignment="center" continuous="YES" value="10" maximum="10" steps="10" minimumImage="minus" catalog="system" maximumImage="plus" id="CC1-N8-Pof">
+                                                    <color key="color" red="0.14117647059999999" green="0.35686274509999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <connections>
+                                                        <action selector="soundlevelSliderAction:" destination="Bgt-2q-o4p" id="fah-qJ-hZz"/>
+                                                    </connections>
+                                                </slider>
+                                            </items>
+                                        </group>
+                                        <group width="1" height="30" alignment="left" verticalAlignment="bottom" backgroundImage="background" radius="0.0" id="Hdw-gz-TzX">
+                                            <items>
+                                                <button width="1" height="1" alignment="left" title="Start" id="J3k-bm-pWG">
+                                                    <connections>
+                                                        <action selector="startButtonAction" destination="Bgt-2q-o4p" id="bPu-a3-AHN"/>
+                                                    </connections>
+                                                </button>
+                                            </items>
+                                        </group>
+                                    </items>
+                                </group>
+                            </items>
+                        </group>
+                    </items>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
+                    <connections>
+                        <outlet property="beeperButton" destination="EsB-u3-RT9" id="m40-A0-nxz"/>
+                        <outlet property="fixedRadioImageView" destination="uF3-5d-gHk" id="FaK-As-hWd"/>
+                        <outlet property="fixedTimeLabel" destination="gkQ-zc-ukF" id="TQ9-Vy-QZT"/>
+                        <outlet property="fixedTimeSlider" destination="oJ0-R8-gyy" id="cfs-5L-oeO"/>
+                        <outlet property="fixedTimeSliderGroup" destination="e35-lg-aCf" id="qKQ-TA-fWe"/>
+                        <outlet property="frequencyButton" destination="Zcw-d7-tQo" id="8K7-e8-MA6"/>
+                        <outlet property="frequencyGroup" destination="fyZ-rj-CSA" id="a2D-Ei-Fnr"/>
+                        <outlet property="promptTime4sImageView" destination="MhT-bk-OAp" id="0my-0b-wPQ"/>
+                        <outlet property="promptTime5sImageView" destination="bgx-4F-uOC" id="ivP-NP-PID"/>
+                        <outlet property="promptTime6sImageView" destination="4HD-fW-oe0" id="ovj-uf-Dgl"/>
+                        <outlet property="randomRadioImageView" destination="VVe-5L-33p" id="2sl-0p-6VH"/>
+                        <outlet property="sethourLabel" destination="ENW-6T-zHv" id="jrB-f8-F2T"/>
+                        <outlet property="setminuteLabel" destination="mh5-9R-eva" id="DPd-xZ-r2d"/>
+                        <outlet property="setsecondLabel" destination="5kJ-dI-tlk" id="RnM-OJ-SBS"/>
+                        <outlet property="soundLevelSlider" destination="CC1-N8-Pof" id="DCe-0H-Ruo"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="466" y="52.5"/>
+        </scene>
+        <!--WorkingInterfaceController-->
+        <scene sceneID="sAM-Ws-Cxf">
+            <objects>
+                <controller identifier="WorkingInterfaceController" fullScreen="YES" id="zNX-o8-bLZ" customClass="WorkingInterfaceController" customModule="Beep_WatchKit_Extension">
+                    <items>
+                        <group width="1" height="351" alignment="left" layout="vertical" radius="0.0" spacing="0.0" id="hSy-bY-RMX">
+                            <items>
+                                <group width="1" height="30" alignment="left" backgroundImage="background" radius="0.0" id="vV0-gS-RFx">
+                                    <items>
+                                        <group width="40" height="1" alignment="left" id="v10-xx-ZRn">
+                                            <items>
+                                                <button width="0.5" height="0.69999999999999996" alignment="right" verticalAlignment="center" backgroundImage="faq" id="Z3R-Zn-LtR">
+                                                    <connections>
+                                                        <action selector="resultButtonAction" destination="zNX-o8-bLZ" id="oUD-ip-gN8"/>
+                                                    </connections>
+                                                </button>
+                                            </items>
+                                        </group>
+                                        <group width="30" height="1" alignment="left" id="37k-OU-JfL">
+                                            <items>
+                                                <button width="0.69999999999999996" height="0.69999999999999996" alignment="right" verticalAlignment="center" backgroundImage="home" id="VBO-mC-cNv">
+                                                    <connections>
+                                                        <action selector="homeButtonAction" destination="zNX-o8-bLZ" id="7mg-5W-iWx"/>
+                                                    </connections>
+                                                </button>
+                                            </items>
+                                        </group>
+                                    </items>
+                                </group>
+                                <group width="1" alignment="left" radius="0.0" spacing="10" id="V1v-na-4OR">
+                                    <items>
+                                        <label height="20" alignment="center" verticalAlignment="center" text="Time Remaining" id="8Ie-pm-dEA">
+                                            <color key="textColor" red="0.14117647059999999" green="0.35686274509999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="font" type="system" pointSize="14"/>
+                                        </label>
+                                    </items>
+                                </group>
+                                <group width="1" height="60" alignment="left" id="AIq-BI-Hr2">
+                                    <items>
+                                        <group width="0.33000000000000002" height="1" alignment="left" layout="vertical" id="yRg-lP-uEA">
+                                            <items>
+                                                <group width="1" height="40" alignment="center" verticalAlignment="center" layout="overlap" id="Zgx-Zc-5Ol">
+                                                    <items>
+                                                        <imageView width="35" height="35" alignment="center" verticalAlignment="center" image="time_set_circle" id="KEP-2C-VY8"/>
+                                                        <label alignment="center" verticalAlignment="center" text="0" id="QBi-Ki-WFe">
+                                                            <color key="textColor" red="0.14117647059999999" green="0.35686274509999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <fontDescription key="font" type="system" pointSize="20"/>
+                                                        </label>
+                                                    </items>
+                                                </group>
+                                                <label alignment="center" verticalAlignment="center" text="hours" id="GBa-iy-Xk6">
+                                                    <color key="textColor" red="0.14117647059999999" green="0.35686274509999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="font" type="system" pointSize="12"/>
+                                                </label>
+                                            </items>
+                                        </group>
+                                        <group width="0.33000000000000002" height="1" alignment="left" layout="vertical" id="Mbu-MT-hnl">
+                                            <items>
+                                                <group width="1" height="40" alignment="center" verticalAlignment="center" layout="overlap" id="yTg-vQ-VpL">
+                                                    <items>
+                                                        <imageView width="35" height="35" alignment="center" verticalAlignment="center" image="time_set_circle" id="iHO-9T-qt5"/>
+                                                        <label alignment="center" verticalAlignment="center" text="0" id="xzX-UG-YRD">
+                                                            <color key="textColor" red="0.14117647059999999" green="0.35686274509999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <fontDescription key="font" type="system" pointSize="20"/>
+                                                        </label>
+                                                    </items>
+                                                </group>
+                                                <label alignment="center" verticalAlignment="center" text="minutes" id="jQS-3T-Mr5">
+                                                    <color key="textColor" red="0.14117647059999999" green="0.35686274509999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="font" type="system" pointSize="12"/>
+                                                </label>
+                                            </items>
+                                        </group>
+                                        <group width="0.33000000000000002" height="1" alignment="left" layout="vertical" id="0kM-er-yPv">
+                                            <items>
+                                                <group width="1" height="40" alignment="center" verticalAlignment="center" layout="overlap" id="bg8-hs-Q8W">
+                                                    <items>
+                                                        <imageView width="35" height="35" alignment="center" verticalAlignment="center" image="time_set_circle" id="zvG-rV-M1p"/>
+                                                        <label alignment="center" verticalAlignment="center" text="0" id="zCh-QX-rhM">
+                                                            <color key="textColor" red="0.14117647059999999" green="0.35686274509999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <fontDescription key="font" type="system" pointSize="20"/>
+                                                        </label>
+                                                    </items>
+                                                </group>
+                                                <label alignment="center" verticalAlignment="center" text="seconds" id="g9e-kz-eAw">
+                                                    <color key="textColor" red="0.14117647059999999" green="0.35686274509999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="font" type="system" pointSize="12"/>
+                                                </label>
+                                            </items>
+                                        </group>
+                                    </items>
+                                </group>
+                                <group width="1" height="120" alignment="left" layout="overlap" id="LVQ-5b-XmF">
+                                    <items>
+                                        <group width="100" height="100" alignment="center" verticalAlignment="center" layout="overlap" id="2A4-ZB-zj5">
+                                            <items>
+                                                <imageView width="1" height="1" alignment="center" verticalAlignment="center" image="going_circle" id="8gD-rP-LSb"/>
+                                                <label width="90" alignment="center" verticalAlignment="center" text="Keep going!" textAlignment="center" numberOfLines="0" id="yFt-SA-CGP">
+                                                    <color key="textColor" red="0.14117647059999999" green="0.35686274509999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="font" type="system" pointSize="15"/>
+                                                </label>
+                                                <button width="1" height="1" alignment="center" verticalAlignment="center" hidden="YES" id="4r4-4m-FrK">
+                                                    <connections>
+                                                        <action selector="goingButtonAction" destination="zNX-o8-bLZ" id="wKX-ca-YPm"/>
+                                                    </connections>
+                                                </button>
+                                            </items>
+                                        </group>
+                                    </items>
+                                </group>
+                                <group width="1" alignment="left" layout="overlap" id="806-jw-3QL">
+                                    <items>
+                                        <group width="1" height="60" alignment="left" hidden="YES" layout="vertical" id="7Dm-z1-NLO">
+                                            <items>
+                                                <group width="1" height="0.5" alignment="left" id="Plq-3y-qij">
+                                                    <items>
+                                                        <group width="5" alignment="left" id="H5y-VV-dmV"/>
+                                                        <label alignment="left" verticalAlignment="center" text="Prompt Frequency" id="zV8-xZ-HTD">
+                                                            <color key="textColor" red="0.14117647059999999" green="0.35686274509999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <fontDescription key="font" type="system" pointSize="12"/>
+                                                        </label>
+                                                    </items>
+                                                </group>
+                                                <group width="1" height="0.5" alignment="left" id="RG9-MU-VbT">
+                                                    <items>
+                                                        <button width="0.69999999999999996" height="20" alignment="center" verticalAlignment="center" title="Medium" backgroundImage="background" id="vLq-4t-NnQ">
+                                                            <fontDescription key="font" type="system" pointSize="12"/>
+                                                            <connections>
+                                                                <action selector="frequencyButtonAction" destination="zNX-o8-bLZ" id="0GS-E5-kju"/>
+                                                            </connections>
+                                                        </button>
+                                                    </items>
+                                                </group>
+                                            </items>
+                                        </group>
+                                        <group width="1" height="60" alignment="left" layout="vertical" id="reM-5l-ff9">
+                                            <items>
+                                                <group width="1" alignment="left" id="xHr-mv-veF">
+                                                    <items>
+                                                        <group width="7.5" height="2" alignment="left" id="BUD-Ka-FQj"/>
+                                                        <label alignment="left" text="Time:" id="7C2-gv-QcV">
+                                                            <color key="textColor" red="0.14117647059999999" green="0.35686274509999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <fontDescription key="font" type="system" pointSize="12"/>
+                                                        </label>
+                                                        <label alignment="left" text="10s" id="ckg-zq-oum">
+                                                            <color key="textColor" red="0.14117647059999999" green="0.35686274509999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <fontDescription key="font" type="system" pointSize="12"/>
+                                                        </label>
+                                                    </items>
+                                                </group>
+                                                <slider width="1" alignment="left" verticalAlignment="center" continuous="YES" value="10" minimum="10" maximum="59" steps="49" minimumImage="minus" catalog="system" maximumImage="plus" id="maM-OP-kDD">
+                                                    <color key="color" red="0.14117647059999999" green="0.35686274509999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <connections>
+                                                        <action selector="fixedTimeSliderAction:" destination="zNX-o8-bLZ" id="HyA-UB-Nlx"/>
+                                                    </connections>
+                                                </slider>
+                                            </items>
+                                        </group>
+                                    </items>
+                                </group>
+                                <group width="1" height="30" alignment="left" id="vf6-x1-dDp"/>
+                                <group width="1" height="30" alignment="left" backgroundImage="background" radius="0.0" id="CYe-bA-dsb">
+                                    <items>
+                                        <button width="1" height="1" alignment="left" title="I am done!" id="OXQ-Uu-rRW">
+                                            <connections>
+                                                <action selector="doneButtonAction" destination="zNX-o8-bLZ" id="4Y3-LR-Jgw"/>
+                                            </connections>
+                                        </button>
+                                    </items>
+                                </group>
+                            </items>
+                        </group>
+                    </items>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
+                    <connections>
+                        <outlet property="animateGroup" destination="2A4-ZB-zj5" id="YAa-NW-N96"/>
+                        <outlet property="fixedGroup" destination="reM-5l-ff9" id="DM9-24-vsd"/>
+                        <outlet property="fixedTimeLabel" destination="ckg-zq-oum" id="zYv-zA-Ifk"/>
+                        <outlet property="fixedTimeSlider" destination="maM-OP-kDD" id="Zns-Az-r40"/>
+                        <outlet property="frequencyButton" destination="vLq-4t-NnQ" id="Zt4-mJ-YEM"/>
+                        <outlet property="frequncyGroup" destination="7Dm-z1-NLO" id="1Jj-Og-g3U"/>
+                        <outlet property="goingButton" destination="4r4-4m-FrK" id="zY3-iN-85o"/>
+                        <outlet property="goingImageView" destination="8gD-rP-LSb" id="7PB-37-lux"/>
+                        <outlet property="goingLabel" destination="yFt-SA-CGP" id="QMf-fd-2WD"/>
+                        <outlet property="sethourLabel" destination="QBi-Ki-WFe" id="9r4-L3-1Z3"/>
+                        <outlet property="setminuteLabel" destination="xzX-UG-YRD" id="lPR-Cg-aIQ"/>
+                        <outlet property="setsecondLabel" destination="zCh-QX-rhM" id="83f-IW-UKb"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="703.50617283950623" y="56.522842639593904"/>
+        </scene>
+        <!--ResultInterfaceController-->
+        <scene sceneID="8gn-ac-OPy">
+            <objects>
+                <controller identifier="ResultInterfaceController" spacing="0.0" fullScreen="YES" id="gGq-gU-1hd" customClass="ResultInterfaceController" customModule="Beep_WatchKit_Extension">
+                    <items>
+                        <group width="1" alignment="left" layout="vertical" radius="0.0" spacing="0.0" id="pMT-z3-oqr">
+                            <items>
+                                <group width="1" height="30" alignment="left" backgroundImage="background" radius="0.0" id="dhq-YR-WbY">
+                                    <items>
+                                        <group width="40" height="1" alignment="left" id="kyC-hj-Pl8">
+                                            <items>
+                                                <button width="0.5" height="0.69999999999999996" alignment="right" verticalAlignment="center" backgroundImage="faq" id="gc9-5I-Lhi"/>
+                                            </items>
+                                        </group>
+                                        <group width="30" height="1" alignment="left" id="uVH-kk-IT1">
+                                            <items>
+                                                <button width="0.69999999999999996" height="0.69999999999999996" alignment="right" verticalAlignment="center" backgroundImage="home" id="YBQ-e6-afs">
+                                                    <connections>
+                                                        <action selector="homeButtonAction" destination="gGq-gU-1hd" id="3qK-hO-9s3"/>
+                                                    </connections>
+                                                </button>
+                                            </items>
+                                        </group>
+                                    </items>
+                                </group>
+                                <group width="1" height="20" alignment="left" radius="0.0" spacing="10" id="sJP-sn-nd2">
+                                    <items>
+                                        <label height="20" alignment="center" verticalAlignment="center" text="Results" id="sQb-Jc-zUm">
+                                            <color key="textColor" red="0.14117647059999999" green="0.35686274509999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="font" type="system" pointSize="14"/>
+                                        </label>
+                                    </items>
+                                </group>
+                                <group width="1" height="110" alignment="left" layout="vertical" spacing="0.0" id="HSd-iD-Bbh">
+                                    <items>
+                                        <group width="1" height="30" alignment="center" verticalAlignment="center" id="p3Z-TE-DNH">
+                                            <items>
+                                                <label alignment="center" verticalAlignment="center" text="I was" id="htZ-Em-p6w">
+                                                    <color key="textColor" red="0.14117647059999999" green="0.35686274509999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="font" type="system" pointSize="12"/>
+                                                </label>
+                                            </items>
+                                        </group>
+                                        <group width="1" height="50" alignment="center" verticalAlignment="center" id="tPb-Wu-fvo">
+                                            <items>
+                                                <label alignment="center" verticalAlignment="center" text="0%" id="OM1-NB-tJA">
+                                                    <color key="textColor" red="0.14117647059999999" green="0.35686274509999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="font" type="system" pointSize="24"/>
+                                                </label>
+                                            </items>
+                                        </group>
+                                        <group width="1" height="30" alignment="center" verticalAlignment="center" id="RKY-tH-h9d">
+                                            <items>
+                                                <label alignment="center" verticalAlignment="center" text="on task" id="NKq-Af-eHe">
+                                                    <color key="textColor" red="0.14117647059999999" green="0.35686274509999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="font" type="system" pointSize="12"/>
+                                                </label>
+                                            </items>
+                                        </group>
+                                    </items>
+                                </group>
+                                <group width="1" height="50" alignment="left" id="GPd-Yx-VLo">
+                                    <items>
+                                        <label width="0.80000000000000004" alignment="center" verticalAlignment="center" text="for my 17 second session on June 2nd" textAlignment="center" numberOfLines="0" id="vr9-ZM-cQe">
+                                            <color key="textColor" red="0.14117647059999999" green="0.35686274509999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="font" type="system" pointSize="12"/>
+                                        </label>
+                                    </items>
+                                </group>
+                                <group width="1" alignment="left" layout="vertical" id="FrW-Ua-hbX">
+                                    <items>
+                                        <group width="1" height="30" alignment="left" backgroundImage="background" id="hOA-vN-M7Y">
+                                            <items>
+                                                <group width="0.25" height="1" alignment="left" id="vZ9-rS-dCb">
+                                                    <items>
+                                                        <label alignment="center" verticalAlignment="center" text="Date" id="KXn-Rg-6Oc">
+                                                            <fontDescription key="font" type="system" pointSize="9"/>
+                                                        </label>
+                                                    </items>
+                                                </group>
+                                                <group width="0.25" height="1" alignment="left" id="Ydy-1X-WXE">
+                                                    <items>
+                                                        <label alignment="center" verticalAlignment="center" text="Duration" textAlignment="center" numberOfLines="0" id="x2J-Y7-mZA">
+                                                            <fontDescription key="font" type="system" pointSize="9"/>
+                                                        </label>
+                                                    </items>
+                                                </group>
+                                                <group width="0.25" height="1" alignment="left" id="cw2-OR-6jb">
+                                                    <items>
+                                                        <label alignment="center" verticalAlignment="center" text="Total prompt" textAlignment="center" numberOfLines="0" id="kjM-r5-nBp">
+                                                            <fontDescription key="font" type="system" pointSize="9"/>
+                                                        </label>
+                                                    </items>
+                                                </group>
+                                                <group width="0.25" height="1" alignment="left" id="B6A-Xw-o1e">
+                                                    <items>
+                                                        <label alignment="center" verticalAlignment="center" text="Clicked" numberOfLines="0" id="7mn-mq-zoJ">
+                                                            <fontDescription key="font" type="system" pointSize="9"/>
+                                                        </label>
+                                                    </items>
+                                                </group>
+                                            </items>
+                                        </group>
+                                    </items>
+                                </group>
+                                <group width="1" height="170" alignment="left" radius="0.0" spacing="0.0" id="WEh-EX-zz7">
+                                    <items>
+                                        <table alignment="left" id="pJV-rK-aNa">
+                                            <items>
+                                                <tableRow identifier="ResultTableCell" id="Kkj-Xs-vxB" customClass="ResultTableCell" customModule="Beep_WatchKit_Extension">
+                                                    <group key="rootItem" width="1" height="30" alignment="left" radius="0.0" spacing="0.0" id="A9p-U2-T6j">
+                                                        <items>
+                                                            <group width="0.25" height="1" alignment="left" id="opu-Pr-09c">
+                                                                <items>
+                                                                    <label alignment="center" verticalAlignment="center" text="Date" id="vbF-Qt-aIk">
+                                                                        <color key="textColor" red="0.14117647059999999" green="0.35686274509999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <fontDescription key="font" type="system" pointSize="9"/>
+                                                                    </label>
+                                                                </items>
+                                                            </group>
+                                                            <group width="0.25" height="1" alignment="left" id="p2s-Tr-3pc">
+                                                                <items>
+                                                                    <label alignment="center" verticalAlignment="center" text="Duration" textAlignment="center" numberOfLines="0" id="ro6-iG-pOO">
+                                                                        <color key="textColor" red="0.14117647059999999" green="0.35686274509999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <fontDescription key="font" type="system" pointSize="9"/>
+                                                                    </label>
+                                                                </items>
+                                                            </group>
+                                                            <group width="0.25" height="1" alignment="left" id="xHd-HE-bpW">
+                                                                <items>
+                                                                    <label alignment="center" verticalAlignment="center" text="Total prompt" textAlignment="center" numberOfLines="0" id="KRY-B6-ISz">
+                                                                        <color key="textColor" red="0.14117647059999999" green="0.35686274509999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <fontDescription key="font" type="system" pointSize="9"/>
+                                                                    </label>
+                                                                </items>
+                                                            </group>
+                                                            <group width="0.25" height="1" alignment="left" id="XfO-A4-MbF">
+                                                                <items>
+                                                                    <label alignment="center" verticalAlignment="center" text="Clicked" numberOfLines="0" id="4ka-lh-zyu">
+                                                                        <color key="textColor" red="0.14117647059999999" green="0.35686274509999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <fontDescription key="font" type="system" pointSize="9"/>
+                                                                    </label>
+                                                                </items>
+                                                            </group>
+                                                        </items>
+                                                        <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
+                                                    </group>
+                                                    <connections>
+                                                        <outlet property="clickedLabel" destination="4ka-lh-zyu" id="e5A-5M-XRR"/>
+                                                        <outlet property="dateLabel" destination="vbF-Qt-aIk" id="ncd-Nn-wrn"/>
+                                                        <outlet property="durationLabel" destination="ro6-iG-pOO" id="LKf-Ky-EYK"/>
+                                                        <outlet property="totalpromptLabel" destination="KRY-B6-ISz" id="VpG-17-sCO"/>
+                                                    </connections>
+                                                </tableRow>
+                                            </items>
+                                        </table>
+                                    </items>
+                                </group>
+                                <group width="1" height="30" alignment="left" backgroundImage="background" radius="0.0" id="ohp-LJ-bbL">
+                                    <items>
+                                        <button width="1" height="1" alignment="left" title="Back to Home" id="ON0-4p-5Pp">
+                                            <connections>
+                                                <action selector="beginButtonAction" destination="gGq-gU-1hd" id="Sng-jq-VFK"/>
+                                            </connections>
+                                        </button>
+                                    </items>
+                                </group>
+                            </items>
+                        </group>
+                    </items>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
+                    <connections>
+                        <outlet property="messageLabel" destination="vr9-ZM-cQe" id="Y5i-0T-NwN"/>
+                        <outlet property="percentageLabel" destination="OM1-NB-tJA" id="VmS-vo-4QV"/>
+                        <outlet property="resultTableView" destination="pJV-rK-aNa" id="y0Z-9l-Txs"/>
+                        <outlet property="resultmessageGroup" destination="GPd-Yx-VLo" id="FCV-Nt-NRt"/>
+                        <outlet property="resultpercentageGroup" destination="HSd-iD-Bbh" id="cBz-11-8yL"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="938.5679012345679" y="28.045685279187815"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
@@ -27,21 +1105,37 @@
                     </connections>
                 </notificationController>
             </objects>
-            <point key="canvasLocation" x="220" y="643"/>
+            <point key="canvasLocation" x="337" y="941"/>
         </scene>
         <!--Notification Controller-->
         <scene sceneID="ZPc-GJ-vnh">
             <objects>
-                <controller id="4sK-HA-Art" customClass="NotificationController" customModuleProvider="target"/>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="Beep_WatchKit_App" customModuleProvider="target"/>
             </objects>
-            <point key="canvasLocation" x="468" y="643"/>
+            <point key="canvasLocation" x="641" y="1222"/>
         </scene>
         <!--Notification Controller-->
         <scene sceneID="Niz-AI-uX2">
             <objects>
-                <controller id="eXb-UN-Cd0" customClass="NotificationController" customModuleProvider="target"/>
+                <controller id="eXb-UN-Cd0" customClass="NotificationController" customModule="Beep_WatchKit_App" customModuleProvider="target"/>
             </objects>
-            <point key="canvasLocation" x="468" y="345"/>
+            <point key="canvasLocation" x="615" y="876"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="WT5-aM-4Lo"/>
+        <segue reference="jWa-Fc-n5o"/>
+    </inferredMetricsTieBreakers>
+    <resources>
+        <image name="background" width="324" height="53"/>
+        <image name="color_circle_button" width="40" height="40"/>
+        <image name="color_circle_view" width="109" height="109"/>
+        <image name="empty_circle_button" width="40" height="40"/>
+        <image name="faq" width="34" height="34"/>
+        <image name="going_circle" width="106" height="107"/>
+        <image name="home" width="34" height="34"/>
+        <image name="minus" catalog="system" width="128" height="26"/>
+        <image name="plus" catalog="system" width="128" height="116"/>
+        <image name="time_set_circle" width="84" height="84"/>
+    </resources>
 </document>
