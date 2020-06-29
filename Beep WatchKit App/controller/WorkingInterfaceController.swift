@@ -118,8 +118,8 @@ class WorkingInterfaceController: WKInterfaceController, AVAudioPlayerDelegate {
             if Global.prompt_type == 0 {
                 self.beep_start_time = self.total_time_duration - self.calc_duration(duration: self.beep_time_interval, start: 0)
             } else {
-                let deactivation_duration = activate_time - Global.deactivate_time
-                self.beep_start_time = self.total_time_duration - deactivation_duration % self.beep_time_interval
+//                let deactivation_duration = activate_time - Global.deactivate_time
+                self.beep_start_time = self.total_time_duration - self.total_time_duration % self.beep_time_interval
             }
         }
         
