@@ -33,7 +33,7 @@ class SettingInterfaceController: WKInterfaceController {
     @IBOutlet weak var setminuteLabel: WKInterfaceLabel!
     @IBOutlet weak var setsecondLabel: WKInterfaceLabel!
     
-    var prompt_type = 0  //// 0: random, 1: fixed
+    var prompt_type = Global.prompt_type  //// 0: random, 1: fixed
 
     var frequency_picker_array = ["Low", "Medium", "High"]
     var beep_picker_array = ["Digital beep", "Electric beep", "Low high beep", "Phone beep", "Low Digital beep", "Bubbles", "Car beep", "Siren beep", "Quindar low", "Quindar high", "Fuzzy Beep", "Low Chrime", "Low Smooth", "Video game", "Vintage Chim"]
@@ -60,6 +60,18 @@ class SettingInterfaceController: WKInterfaceController {
         self.fixedTimeSlider.setValue(Float(Global.fixed_time))
         self.fixedTimeLabel.setText(String(Global.fixed_time) + "s")
         self.soundLevelSlider.setValue(Float(Global.selected_sound_level))
+        
+        if self.prompt_type == 0 {
+            self.randomRadioImageView.setImageNamed("color_circle_button")
+            self.fixedRadioImageView.setImageNamed("empty_circle_button")
+            self.frequencyGroup.setHidden(false)
+            self.fixedTimeSliderGroup.setHidden(true)
+        } else {
+            self.randomRadioImageView.setImageNamed("empty_circle_button")
+            self.fixedRadioImageView.setImageNamed("color_circle_button")
+            self.frequencyGroup.setHidden(true)
+            self.fixedTimeSliderGroup.setHidden(false)
+        }
         
     }
     

@@ -20,4 +20,7 @@ class Global {
     static var selected_set_second: Int = 0  // 0: min, 59: max
     
     static var selected_audio_file: Int = 0  // 0: file surfix
+    
+    static var activate_time: Int = 0  // 0: time second when screen is activated
+    static var deactivate_time: Int = 0  // 0: time second when screen is deactivated
 }

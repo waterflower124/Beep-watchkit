@@ -719,7 +719,7 @@ The research that demonstrated how a beeper tape can help attention and focus wa
             <objects>
                 <controller identifier="WorkingInterfaceController" fullScreen="YES" id="zNX-o8-bLZ" customClass="WorkingInterfaceController" customModule="Beep_WatchKit_Extension">
                     <items>
-                        <group width="1" height="351" alignment="left" layout="vertical" radius="0.0" spacing="0.0" id="hSy-bY-RMX">
+                        <group width="1" height="321" alignment="left" layout="vertical" radius="0.0" spacing="0.0" id="hSy-bY-RMX">
                             <items>
                                 <group width="1" height="30" alignment="left" backgroundImage="background" radius="0.0" id="vV0-gS-RFx">
                                     <items>
@@ -874,7 +874,6 @@ The research that demonstrated how a beeper tape can help attention and focus wa
                                         </group>
                                     </items>
                                 </group>
-                                <group width="1" height="30" alignment="left" id="vf6-x1-dDp"/>
                                 <group width="1" height="30" alignment="left" backgroundImage="background" radius="0.0" id="CYe-bA-dsb">
                                     <items>
                                         <button width="1" height="1" alignment="left" title="I am done!" id="OXQ-Uu-rRW">
@@ -905,7 +904,7 @@ The research that demonstrated how a beeper tape can help attention and focus wa
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="703.50617283950623" y="56.522842639593904"/>
+            <point key="canvasLocation" x="703.50617283950623" y="43.578680203045678"/>
         </scene>
         <!--ResultInterfaceController-->
         <scene sceneID="8gn-ac-OPy">
@@ -1123,8 +1122,8 @@ The research that demonstrated how a beeper tape can help attention and focus wa
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="WT5-aM-4Lo"/>
-        <segue reference="jWa-Fc-n5o"/>
+        <segue reference="MIP-5B-0mT"/>
+        <segue reference="IJ5-iE-qVm"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="background" width="324" height="53"/>

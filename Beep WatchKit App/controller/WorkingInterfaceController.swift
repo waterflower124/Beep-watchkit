@@ -31,6 +31,8 @@ class WorkingInterfaceController: WKInterfaceController, AVAudioPlayerDelegate {
     
     @IBOutlet weak var animateGroup: WKInterfaceGroup!
     
+//    @IBOutlet var interfaceTimerCountDown: WKInterfaceTimer!
+    
     var timer = Timer()
     var total_time_duration = 0
     var global_total_time_duration = 0
@@ -52,6 +54,10 @@ class WorkingInterfaceController: WKInterfaceController, AVAudioPlayerDelegate {
    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
+        
+        print("awake function... ... ...")
+        
+        Global.deactivate_time = 0
         
         self.sethourLabel.setText(String(Global.selected_set_hour))
         self.setminuteLabel.setText(String(Global.selected_set_minute))
@@ -86,73 +92,15 @@ class WorkingInterfaceController: WKInterfaceController, AVAudioPlayerDelegate {
         }
         
         self.total_time_duration = Global.selected_set_hour * 3600 + Global.selected_set_minute * 60 + Global.selected_set_second
-        self.global_total_time_duration = Global.selected_set_hour * 3600 + Global.selected_set_minute * 60 + Global.selected_set_second
+        self.global_total_time_duration = self.total_time_duration
         
         self.beep_start_time = self.total_time_duration - self.beep_time_interval
         
-        self.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in
-            self.total_time_duration -= 1
-            let hour = Int(self.total_time_duration / 3600)
-            let minute = Int((self.total_time_duration - hour * 3600) / 60)
-            let second = Int(self.total_time_duration - hour * 3600 - minute * 60)
-            self.sethourLabel.setText(String(hour))
-            self.setminuteLabel.setText(String(minute))
-            self.setsecondLabel.setText(String(second))
-            
-            if self.beep_start_time == self.total_time_duration {
-                if Global.prompt_type == 0 {
-                    if Global.selected_frequency == 0 {
-                        self.beep_time_interval = self.calc_duration(duration: 90, start: 90 - (self.global_total_time_duration - self.total_time_duration) % 90)
-                    } else if Global.selected_frequency == 1 {
-                        self.beep_time_interval = self.calc_duration(duration: 60, start: 60 - (self.global_total_time_duration - self.total_time_duration) % 60)
-                    } else if Global.selected_frequency == 2 {
-                        self.beep_time_interval = self.calc_duration(duration: 30, start: 30 - (self.global_total_time_duration - self.total_time_duration) % 30)
-                    }
-                } else {
-                    self.beep_time_interval = Global.fixed_time
-                }
-                self.beep_start_time = self.beep_start_time - self.beep_time_interval
-                self.total_beep_count += 1
-                if self.audio_player == nil || !self.audio_player.isPlaying {
-                    let audio_file = "beeper" + String(Global.selected_audio_file + 1) + ".mp3"
-                    if let audio_path = Bundle.main.path(forResource: audio_file, ofType: nil) {
-                        try? self.audio_player = AVAudioPlayer(contentsOf: URL(fileURLWithPath: audio_path))
-                        self.audio_player.numberOfLoops = self.beep_period - 1
-                        self.audio_player.volume = 0.1 * Float(Global.selected_sound_level)
-                        self.audio_player.play()
-                        self.audio_player.delegate = self
-                                               
-                        self.goingImageView.setImageNamed("color_circle_view.png")
-                        self.goingLabel.setText("I am still on task!")
-                        self.goingLabel.setTextColor(UIColor.white)
-                        self.goingButton.setHidden(false)
-                        WKInterfaceDevice.current().play(.success)
-                        
-//                        self.animationCircle()
-                        self.beep_timer = Timer.scheduledTimer(withTimeInterval: 1.5, repeats: true, block: { _ in
-                            self.animationCircle()
-                        })
-                        
-                    } else {
-                        print("Unable to find sound file \(audio_file).mp3")
-                    }
-                }
-            }
-            
-            if self.total_time_duration == 0 {
-                self.beep_timer.invalidate()
-                self.animateGroup.setWidth(100)
-                self.animateGroup.setHeight(100)
-                WKInterfaceDevice.current().play(.failure)
-                
-                self.timer.invalidate()
-                
-                self.audio_player.stop()
-                self.record_result()
-                self.pushController(withName: "ResultInterfaceController", context: "working_result")
-            }
-            
-        })
+//        self.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in
+//
+//            self.timer_function()
+//
+//        })
         
         self.fixedTimeLabel.setText(String(Global.fixed_time) + "s")
         self.fixedTimeSlider.setValue(Float(Global.fixed_time))
@@ -163,22 +111,53 @@ class WorkingInterfaceController: WKInterfaceController, AVAudioPlayerDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(applicationDidEnterBackground(notification:)), name: Notification.Name(rawValue: "UIApplicationDidEnterBackgroundNotification"), object: nil)
         
         self.frequencyButton.setTitle(self.frequency_picker_array[Global.selected_frequency])
-        if Global.prompt_type == 0 {
-//            if Global.selected_frequency == 0 {
-//                self.beep_time_interval = 90
-//            } else if Global.selected_frequency == 1 {
-//                self.beep_time_interval = 60
-//            } else if Global.selected_frequency == 2 {
-//                self.beep_time_interval = 30
-//            }
-        } else {
-            
+        
+        let activate_time = Int(Date().timeIntervalSince1970)
+        if(Global.deactivate_time != 0) {
+            self.total_time_duration -= activate_time - Global.deactivate_time
+            if Global.prompt_type == 0 {
+                self.beep_start_time = self.total_time_duration - self.calc_duration(duration: self.beep_time_interval, start: 0)
+            } else {
+                let deactivation_duration = activate_time - Global.deactivate_time
+                self.beep_start_time = self.total_time_duration - deactivation_duration % self.beep_time_interval
+            }
         }
+        
+        let hour = Int(self.total_time_duration / 3600)
+        let minute = Int((self.total_time_duration - hour * 3600) / 60)
+        let second = Int(self.total_time_duration - hour * 3600 - minute * 60)
+        self.sethourLabel.setText(String(hour))
+        self.setminuteLabel.setText(String(minute))
+        self.setsecondLabel.setText(String(second))
+        
+        self.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in
+            
+            self.timer_function()
+            
+        })
+        
+       print("activate function")
     }
     
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
+        
+        Global.deactivate_time = Int(Date().timeIntervalSince1970)
+        
+        self.timer.invalidate()
+        self.beep_timer.invalidate()
+        self.animateGroup.setWidth(100)
+        self.animateGroup.setHeight(100)
+        WKInterfaceDevice.current().play(.failure)
+                
+//        self.audio_player.stop()
+        self.goingImageView.setImageNamed("going_circle.png")
+        self.goingLabel.setText("Keep going!")
+        self.goingLabel.setTextColor(UIColor(red: 36.0 / 255, green: 91.0 / 255, blue: 138.0 / 255, alpha: 1))
+        self.goingButton.setHidden(true)
+        WKInterfaceDevice.current().play(.failure)
+        
     }
     
     override func willDisappear() {
@@ -188,6 +167,70 @@ class WorkingInterfaceController: WKInterfaceController, AVAudioPlayerDelegate {
     @objc func applicationDidEnterBackground(notification: NSNotification) {
         print("Device is locked")
         self.displayLocalNotification()
+    }
+    
+    func timer_function() {
+        self.total_time_duration -= 1
+        let hour = Int(self.total_time_duration / 3600)
+        let minute = Int((self.total_time_duration - hour * 3600) / 60)
+        let second = Int(self.total_time_duration - hour * 3600 - minute * 60)
+        self.sethourLabel.setText(String(hour))
+        self.setminuteLabel.setText(String(minute))
+        self.setsecondLabel.setText(String(second))
+
+        if self.beep_start_time == self.total_time_duration {
+            if Global.prompt_type == 0 {
+                if Global.selected_frequency == 0 {
+                    self.beep_time_interval = self.calc_duration(duration: 90, start: 90 - (self.global_total_time_duration - self.total_time_duration) % 90)
+                } else if Global.selected_frequency == 1 {
+                    self.beep_time_interval = self.calc_duration(duration: 60, start: 60 - (self.global_total_time_duration - self.total_time_duration) % 60)
+                } else if Global.selected_frequency == 2 {
+                    self.beep_time_interval = self.calc_duration(duration: 30, start: 30 - (self.global_total_time_duration - self.total_time_duration) % 30)
+                }
+            } else {
+                self.beep_time_interval = Global.fixed_time
+            }
+            
+            self.beep_start_time = self.beep_start_time - self.beep_time_interval
+            self.total_beep_count += 1
+            if self.audio_player == nil || !self.audio_player.isPlaying {
+                let audio_file = "beeper" + String(Global.selected_audio_file + 1) + ".mp3"
+                if let audio_path = Bundle.main.path(forResource: audio_file, ofType: nil) {
+                    try? self.audio_player = AVAudioPlayer(contentsOf: URL(fileURLWithPath: audio_path))
+                    self.audio_player.numberOfLoops = self.beep_period - 1
+                    self.audio_player.volume = 0.1 * Float(Global.selected_sound_level)
+                    self.audio_player.play()
+                    self.audio_player.delegate = self
+                                           
+                    self.goingImageView.setImageNamed("color_circle_view.png")
+                    self.goingLabel.setText("I am still on task!")
+                    self.goingLabel.setTextColor(UIColor.white)
+                    self.goingButton.setHidden(false)
+                    WKInterfaceDevice.current().play(.success)
+                    
+//                        self.animationCircle()
+                    self.beep_timer = Timer.scheduledTimer(withTimeInterval: 1.5, repeats: true, block: { _ in
+                        self.animationCircle()
+                    })
+                    
+                } else {
+                    print("Unable to find sound file \(audio_file).mp3")
+                }
+            }
+        }
+        
+        if self.total_time_duration == 0 {
+            self.beep_timer.invalidate()
+            self.animateGroup.setWidth(100)
+            self.animateGroup.setHeight(100)
+            WKInterfaceDevice.current().play(.failure)
+            
+            self.timer.invalidate()
+            
+            self.audio_player.stop()
+            self.record_result()
+            self.pushController(withName: "ResultInterfaceController", context: "working_result")
+        }
     }
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
@@ -294,6 +337,7 @@ class WorkingInterfaceController: WKInterfaceController, AVAudioPlayerDelegate {
     }
     
     @IBAction func goingButtonAction() {
+        
         self.beep_timer.invalidate()
         self.animateGroup.setWidth(100)
         self.animateGroup.setHeight(100)
@@ -318,7 +362,7 @@ class WorkingInterfaceController: WKInterfaceController, AVAudioPlayerDelegate {
             self.audio_player.stop()
         }
         self.record_result()
-        self.pushController(withName: "ResultInterfaceController", context: nil)
+        self.pushController(withName: "ResultInterfaceController", context: "working_result")
         
         
     }
